@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2BB53E104727DC330C3959BC /* Pods_AskifyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 561FAAD72F51B476E5D10173 /* Pods_AskifyUITests.framework */; };
 		464A816D20375D0300948DFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A816C20375D0300948DFF /* AppDelegate.swift */; };
 		464A816F20375D0300948DFF /* LandingPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A816E20375D0300948DFF /* LandingPageVC.swift */; };
 		464A817220375D0300948DFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 464A817020375D0300948DFF /* Main.storyboard */; };
@@ -15,6 +16,12 @@
 		464A818220375D0300948DFF /* AskifyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A818120375D0300948DFF /* AskifyTests.swift */; };
 		464A818D20375D0300948DFF /* AskifyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A818C20375D0300948DFF /* AskifyUITests.swift */; };
 		464A819E20376A8A00948DFF /* QueueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A819D20376A8A00948DFF /* QueueVC.swift */; };
+		464A81A02037778B00948DFF /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A819F2037778B00948DFF /* Queue.swift */; };
+		464A81A3203777A000948DFF /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A81A2203777A000948DFF /* UserDataService.swift */; };
+		464A81A5203777B600948DFF /* QueueDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A81A4203777B600948DFF /* QueueDataService.swift */; };
+		464A81A8203777C400948DFF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A81A7203777C400948DFF /* Constants.swift */; };
+		5C5FF1DCC228C95B33020BD6 /* Pods_Askify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E2276273F9BC60F11488195 /* Pods_Askify.framework */; };
+		699D59073787B78F41E620CA /* Pods_AskifyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74393A66AE5A47716B1DF075 /* Pods_AskifyTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +56,19 @@
 		464A818C20375D0300948DFF /* AskifyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskifyUITests.swift; sourceTree = "<group>"; };
 		464A818E20375D0300948DFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		464A819D20376A8A00948DFF /* QueueVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueVC.swift; sourceTree = "<group>"; };
+		464A819F2037778B00948DFF /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		464A81A2203777A000948DFF /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
+		464A81A4203777B600948DFF /* QueueDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueDataService.swift; sourceTree = "<group>"; };
+		464A81A7203777C400948DFF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		561FAAD72F51B476E5D10173 /* Pods_AskifyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AskifyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FA8FB52F696B96A14B5C80A /* Pods-AskifyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AskifyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AskifyTests/Pods-AskifyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		74393A66AE5A47716B1DF075 /* Pods_AskifyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AskifyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E2276273F9BC60F11488195 /* Pods_Askify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Askify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CA7F4F00178985D017FD2CD /* Pods-AskifyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AskifyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AskifyTests/Pods-AskifyTests.release.xcconfig"; sourceTree = "<group>"; };
+		C791488093FB4423D40AFF0F /* Pods-Askify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Askify.release.xcconfig"; path = "Pods/Target Support Files/Pods-Askify/Pods-Askify.release.xcconfig"; sourceTree = "<group>"; };
+		C9B6916AE0C4C3284DF96611 /* Pods-Askify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Askify.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Askify/Pods-Askify.debug.xcconfig"; sourceTree = "<group>"; };
+		E92F01118C5A7A55C8DF2A81 /* Pods-AskifyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AskifyUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AskifyUITests/Pods-AskifyUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F9814D0F9B10172F8F6D423E /* Pods-AskifyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AskifyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AskifyUITests/Pods-AskifyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C5FF1DCC228C95B33020BD6 /* Pods_Askify.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				699D59073787B78F41E620CA /* Pods_AskifyTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +92,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BB53E104727DC330C3959BC /* Pods_AskifyUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		023A395639D12EEB6FA01B13 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C9B6916AE0C4C3284DF96611 /* Pods-Askify.debug.xcconfig */,
+				C791488093FB4423D40AFF0F /* Pods-Askify.release.xcconfig */,
+				6FA8FB52F696B96A14B5C80A /* Pods-AskifyTests.debug.xcconfig */,
+				9CA7F4F00178985D017FD2CD /* Pods-AskifyTests.release.xcconfig */,
+				F9814D0F9B10172F8F6D423E /* Pods-AskifyUITests.debug.xcconfig */,
+				E92F01118C5A7A55C8DF2A81 /* Pods-AskifyUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		464A816020375D0300948DFF = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +119,8 @@
 				464A818020375D0300948DFF /* AskifyTests */,
 				464A818B20375D0300948DFF /* AskifyUITests */,
 				464A816A20375D0300948DFF /* Products */,
+				023A395639D12EEB6FA01B13 /* Pods */,
+				795BA8E63B3E722C3A0863DB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +137,8 @@
 		464A816B20375D0300948DFF /* Askify */ = {
 			isa = PBXGroup;
 			children = (
+				464A81A6203777B800948DFF /* Utilities */,
+				464A81A12037779400948DFF /* Services */,
 				464A819C20375D6A00948DFF /* View */,
 				464A819B20375D6200948DFF /* Model */,
 				464A819A20375D5A00948DFF /* Controller */,
@@ -141,6 +181,7 @@
 		464A819B20375D6200948DFF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				464A819F2037778B00948DFF /* Queue.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -152,6 +193,33 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		464A81A12037779400948DFF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				464A81A2203777A000948DFF /* UserDataService.swift */,
+				464A81A4203777B600948DFF /* QueueDataService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		464A81A6203777B800948DFF /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				464A81A7203777C400948DFF /* Constants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		795BA8E63B3E722C3A0863DB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8E2276273F9BC60F11488195 /* Pods_Askify.framework */,
+				74393A66AE5A47716B1DF075 /* Pods_AskifyTests.framework */,
+				561FAAD72F51B476E5D10173 /* Pods_AskifyUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -159,9 +227,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 464A819120375D0300948DFF /* Build configuration list for PBXNativeTarget "Askify" */;
 			buildPhases = (
+				E249DE0076F67616F34F0EF0 /* [CP] Check Pods Manifest.lock */,
 				464A816520375D0300948DFF /* Sources */,
 				464A816620375D0300948DFF /* Frameworks */,
 				464A816720375D0300948DFF /* Resources */,
+				6ADB6AE4A321B3F25CC05FB0 /* [CP] Embed Pods Frameworks */,
+				4528FDE556D4FF66EFC728EC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -176,9 +247,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 464A819420375D0300948DFF /* Build configuration list for PBXNativeTarget "AskifyTests" */;
 			buildPhases = (
+				489E77505F22EAE406B1B56E /* [CP] Check Pods Manifest.lock */,
 				464A817920375D0300948DFF /* Sources */,
 				464A817A20375D0300948DFF /* Frameworks */,
 				464A817B20375D0300948DFF /* Resources */,
+				5B930D179D209A6CCB484FF5 /* [CP] Embed Pods Frameworks */,
+				E43F1F63B0C8D54785618E10 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -194,9 +268,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 464A819720375D0300948DFF /* Build configuration list for PBXNativeTarget "AskifyUITests" */;
 			buildPhases = (
+				72362D66063E208A9A351B9F /* [CP] Check Pods Manifest.lock */,
 				464A818420375D0300948DFF /* Sources */,
 				464A818520375D0300948DFF /* Frameworks */,
 				464A818620375D0300948DFF /* Resources */,
+				C98B0446601BDAEF247DBD32 /* [CP] Embed Pods Frameworks */,
+				8C6C5AA45576B92AB614565E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -281,14 +358,156 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4528FDE556D4FF66EFC728EC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Askify/Pods-Askify-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		489E77505F22EAE406B1B56E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5B930D179D209A6CCB484FF5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AskifyTests/Pods-AskifyTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6ADB6AE4A321B3F25CC05FB0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Askify/Pods-Askify-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		72362D66063E208A9A351B9F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8C6C5AA45576B92AB614565E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AskifyUITests/Pods-AskifyUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C98B0446601BDAEF247DBD32 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AskifyUITests/Pods-AskifyUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E249DE0076F67616F34F0EF0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E43F1F63B0C8D54785618E10 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AskifyTests/Pods-AskifyTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		464A816520375D0300948DFF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				464A816F20375D0300948DFF /* LandingPageVC.swift in Sources */,
+				464A81A3203777A000948DFF /* UserDataService.swift in Sources */,
 				464A819E20376A8A00948DFF /* QueueVC.swift in Sources */,
+				464A81A5203777B600948DFF /* QueueDataService.swift in Sources */,
+				464A81A8203777C400948DFF /* Constants.swift in Sources */,
 				464A816D20375D0300948DFF /* AppDelegate.swift in Sources */,
+				464A81A02037778B00948DFF /* Queue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +671,7 @@
 		};
 		464A819220375D0300948DFF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9B6916AE0C4C3284DF96611 /* Pods-Askify.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -467,6 +687,7 @@
 		};
 		464A819320375D0300948DFF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C791488093FB4423D40AFF0F /* Pods-Askify.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -482,6 +703,7 @@
 		};
 		464A819520375D0300948DFF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FA8FB52F696B96A14B5C80A /* Pods-AskifyTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -499,6 +721,7 @@
 		};
 		464A819620375D0300948DFF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CA7F4F00178985D017FD2CD /* Pods-AskifyTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -516,6 +739,7 @@
 		};
 		464A819820375D0300948DFF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9814D0F9B10172F8F6D423E /* Pods-AskifyUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -532,6 +756,7 @@
 		};
 		464A819920375D0300948DFF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E92F01118C5A7A55C8DF2A81 /* Pods-AskifyUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

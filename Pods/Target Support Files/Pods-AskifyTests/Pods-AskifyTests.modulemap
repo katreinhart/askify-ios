@@ -1,0 +1,6 @@
+framework module Pods_AskifyTests {
+  umbrella header "Pods-AskifyTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
