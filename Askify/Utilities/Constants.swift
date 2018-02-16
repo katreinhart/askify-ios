@@ -25,6 +25,9 @@ let TO_REGISTER = "toRegister"
 let SHOW_LANDING_FROM_SIGNUP = "showLandingFromSignup"
 let SHOW_LANDING_FROM_LOGIN = "showLandingFromLogin"
 
+// Storyboard IDs
+let QUEUE_VC = "queueView"
+let ARCHIVE_VC = "archiveView"
 
 // Headers
 let BEARER_HEADER = [

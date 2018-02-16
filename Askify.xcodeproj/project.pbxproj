@@ -15,6 +15,8 @@
 		462F0A92203789830078AB55 /* ArchiveTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F0A90203789830078AB55 /* ArchiveTVCell.swift */; };
 		462F0A93203789830078AB55 /* ArchiveTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 462F0A91203789830078AB55 /* ArchiveTVCell.xib */; };
 		462F0A95203789BA0078AB55 /* TabNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F0A94203789BA0078AB55 /* TabNavigationVC.swift */; };
+		462F0A9720378C150078AB55 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F0A9620378C150078AB55 /* RegisterVC.swift */; };
+		462F0A99203791AF0078AB55 /* ArchiveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F0A98203791AF0078AB55 /* ArchiveVC.swift */; };
 		464A816D20375D0300948DFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A816C20375D0300948DFF /* AppDelegate.swift */; };
 		464A816F20375D0300948DFF /* LandingPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A816E20375D0300948DFF /* LandingPageVC.swift */; };
 		464A817220375D0300948DFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 464A817020375D0300948DFF /* Main.storyboard */; };
@@ -56,6 +58,8 @@
 		462F0A90203789830078AB55 /* ArchiveTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveTVCell.swift; sourceTree = "<group>"; };
 		462F0A91203789830078AB55 /* ArchiveTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArchiveTVCell.xib; sourceTree = "<group>"; };
 		462F0A94203789BA0078AB55 /* TabNavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabNavigationVC.swift; sourceTree = "<group>"; };
+		462F0A9620378C150078AB55 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		462F0A98203791AF0078AB55 /* ArchiveVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveVC.swift; sourceTree = "<group>"; };
 		464A816920375D0300948DFF /* Askify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Askify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		464A816C20375D0300948DFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		464A816E20375D0300948DFF /* LandingPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageVC.swift; sourceTree = "<group>"; };
@@ -190,6 +194,8 @@
 				462F0A8A203780730078AB55 /* LoginVC.swift */,
 				464A819D20376A8A00948DFF /* QueueVC.swift */,
 				462F0A94203789BA0078AB55 /* TabNavigationVC.swift */,
+				462F0A9620378C150078AB55 /* RegisterVC.swift */,
+				462F0A98203791AF0078AB55 /* ArchiveVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -529,6 +535,7 @@
 				462F0A92203789830078AB55 /* ArchiveTVCell.swift in Sources */,
 				464A81A3203777A000948DFF /* UserDataService.swift in Sources */,
 				464A819E20376A8A00948DFF /* QueueVC.swift in Sources */,
+				462F0A99203791AF0078AB55 /* ArchiveVC.swift in Sources */,
 				464A81A5203777B600948DFF /* QueueDataService.swift in Sources */,
 				462F0A8920377B230078AB55 /* User.swift in Sources */,
 				462F0A8B203780730078AB55 /* LoginVC.swift in Sources */,
@@ -536,6 +543,7 @@
 				462F0A8E203789730078AB55 /* QueueTVCell.swift in Sources */,
 				464A816D20375D0300948DFF /* AppDelegate.swift in Sources */,
 				464A81A02037778B00948DFF /* Queue.swift in Sources */,
+				462F0A9720378C150078AB55 /* RegisterVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

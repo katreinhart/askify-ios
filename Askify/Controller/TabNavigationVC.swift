@@ -18,7 +18,42 @@ class TabNavigationVC: UIViewController {
     var queueVC: UIViewController!
     var archiveVC: UIViewController!
     
+    var viewControllers: [UIViewController]!
+    
+    var selectedIndex: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        queueVC = storyboard.instantiateViewController(withIdentifier: QUEUE_VC)
+        archiveVC = storyboard.instantiateViewController(withIdentifier: ARCHIVE_VC)
+        
+        viewControllers = [queueVC, archiveVC]
+        
+        Buttons[selectedIndex].isSelected = true
+        
+        tabPressed(Buttons[selectedIndex])
+    }
+    @IBAction func tabPressed(_ sender: UIButton) {
+        let previousIndex = selectedIndex
+        selectedIndex = sender.tag
+        
+        Buttons[previousIndex].isSelected = false
+        
+        let previousVC = viewControllers[previousIndex]
+        previousVC.willMove(toParentViewController: nil)
+        previousVC.view.removeFromSuperview()
+        previousVC.removeFromParentViewController()
+        
+        sender.isSelected = true
+        
+        let vc = viewControllers[selectedIndex]
+        addChildViewController(vc)
+        vc.view.frame = ContentView.bounds
+        ContentView.addSubview(vc.view)
+        
+        vc.didMove(toParentViewController: self)
     }
 }
