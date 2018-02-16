@@ -22,7 +22,7 @@ class LoginVC: UIViewController {
     
     // Actions
     @IBAction func loginBtnPressed(_ sender: Any) {
-        
+        self.performSegue(withIdentifier: SHOW_LANDING_FROM_LOGIN, sender: nil)
     }
     
 }
