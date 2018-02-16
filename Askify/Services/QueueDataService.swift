@@ -8,7 +8,28 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 class QueueDataService {
     
+    static let instance = QueueDataService()
+    
+//    var queue: [Question]
+//    var archive: [Question]
+    
+    func fetchQueue(completion: @escaping CompletionHandler) {
+        
+    }
+    
+    func fetchArchive(completion: @escaping CompletionHandler) {
+        
+    }
+    
+    func postQuestion(question: String, completion: @escaping CompletionHandler) {
+        
+    }
+    
+    func postAnswer(answer: String, completion: @escaping CompletionHandler) {
+        
+    }
 }

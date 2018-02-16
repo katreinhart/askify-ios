@@ -7,3 +7,22 @@
 //
 
 import Foundation
+import Alamofire
+import SwiftyJSON
+
+class UserDataService {
+    
+    static let instance = UserDataService()
+    
+    func loginUser(email: String, password: String, completion: @escaping CompletionHandler) {
+        
+    }
+    
+    func registerUser(email: String, password: String, firstname: String, cohort: String, completion: @escaping CompletionHandler) {
+        
+    }
+    
+    func logoutUser() {
+        
+    }
+}

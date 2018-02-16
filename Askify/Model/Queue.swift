@@ -7,3 +7,16 @@
 //
 
 import Foundation
+
+struct Question {
+    var question: String
+    var answered: Bool
+    var answer: String?
+    var user_id: Int
+    var user_name: String?
+}
+
+struct Answer {
+    var answer: String
+    var user_id: Int
+}

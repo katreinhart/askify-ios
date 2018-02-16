@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LoginVC.swift
 //  Askify
 //
 //  Created by Katherine Reinhart on 2/16/18.
@@ -8,18 +8,21 @@
 
 import UIKit
 
-class LandingPageVC: UIViewController {
-
+class LoginVC: UIViewController {
+    
+    // Outlets
+    @IBOutlet weak var emailTxt: UITextField!
+    @IBOutlet weak var passTxt: UITextField!
+    
+    // Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
+    
+    // Actions
     @IBAction func loginBtnPressed(_ sender: Any) {
-        self.performSegue(withIdentifier: TO_LOGIN, sender: self)
+        
     }
-
-    @IBAction func registerBtnPressed(_ sender: Any) {
-        self.performSegue(withIdentifier: TO_REGISTER, sender: self)
-    }
+    
 }
-

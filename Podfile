@@ -8,7 +8,7 @@ target 'Askify' do
   use_frameworks!
 
   # Pods for Askify
-  pod 'Alamofire'
+  pod 'Alamofire', '~> 4.5'
   pod 'SwiftyJSON'
 
   target 'AskifyTests' do
