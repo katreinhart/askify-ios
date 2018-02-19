@@ -9,39 +9,64 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="queueTVCell" rowHeight="80" id="KGk-i7-Jjw" customClass="QueueTVCell" customModule="Askify" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="QueueTVCell" selectionStyle="default" indentationWidth="10" rowHeight="80" id="KGk-i7-Jjw" userLabel="queueTVCell" customClass="QueueTVCell" customModule="Askify" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZh-GB-Wro">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZh-GB-Wro">
                         <rect key="frame" x="12" y="29" width="21" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="PYT-RQ-r0m"/>
+                            <constraint firstAttribute="width" constant="21" id="VdW-cb-Pas"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BSd-lI-FCA">
-                        <rect key="frame" x="265" y="24" width="51" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" title="Answer"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BSd-lI-FCA">
+                        <rect key="frame" x="234" y="17.5" width="76" height="45"/>
+                        <color key="backgroundColor" red="0.86666666670000003" green="0.52156862749999999" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="45" id="IMt-Y5-TbT"/>
+                            <constraint firstAttribute="width" constant="76" id="Vck-GW-JCo"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                        <state key="normal" title="Answer">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
                         <connections>
                             <action selector="answerButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="rG7-0c-KmB"/>
                         </connections>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This is where the question will go" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kaa-b6-0GC">
-                        <rect key="frame" x="62" y="0.0" width="197" height="80"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is where the question will go" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kaa-b6-0GC">
+                        <rect key="frame" x="47" y="0.0" width="185" height="79.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="kaa-b6-0GC" secondAttribute="bottom" id="FQb-bJ-F2z"/>
+                    <constraint firstItem="BSd-lI-FCA" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="IjF-LJ-jtH"/>
+                    <constraint firstItem="kaa-b6-0GC" firstAttribute="leading" secondItem="qZh-GB-Wro" secondAttribute="trailing" constant="14" id="MKL-5M-2GH"/>
+                    <constraint firstItem="qZh-GB-Wro" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="29" id="YhK-Ts-baj"/>
+                    <constraint firstAttribute="bottom" secondItem="qZh-GB-Wro" secondAttribute="bottom" constant="29.5" id="ZfL-Hh-084"/>
+                    <constraint firstItem="qZh-GB-Wro" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="al7-pj-CP6"/>
+                    <constraint firstAttribute="trailing" secondItem="BSd-lI-FCA" secondAttribute="trailing" constant="10" id="d8s-cB-J98"/>
+                    <constraint firstItem="kaa-b6-0GC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="dLs-yr-oSj"/>
+                    <constraint firstItem="BSd-lI-FCA" firstAttribute="leading" secondItem="kaa-b6-0GC" secondAttribute="trailing" constant="2" id="pOP-I2-I0l"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>

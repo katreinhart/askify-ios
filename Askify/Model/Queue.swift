@@ -14,6 +14,7 @@ struct Question {
     var answer: String?
     var user_id: Int
     var user_name: String?
+    var cohort: String
 }
 
 struct Answer {

@@ -20,6 +20,8 @@ class QueueDataService {
     
     func fetchQueue(completion: @escaping CompletionHandler) {
         let header = UserDataService.instance.bearerHeader()
+        // Empty out queue so it does not repeat info
+        queue = []
         
         Alamofire.request(QUEUE_URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
             if response.result.error != nil {
@@ -38,7 +40,7 @@ class QueueDataService {
                 let cohort = value["cohort"].stringValue
                 let fname = value["fname"].stringValue
                 
-                var newQuestion = Question(question: q, answered: answered, answer: nil, user_id: userid, user_name: fname)
+                let newQuestion = Question(question: q, answered: answered, answer: nil, user_id: userid, user_name: fname, cohort: cohort)
                 self.queue.append(newQuestion)
             }
             

@@ -155,7 +155,6 @@
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="22"/>
                                                 <state key="normal" title="LOG IN"/>
                                                 <connections>
-                                                    <action selector="askifyButtonPressed:" destination="lxO-jF-GeZ" eventType="touchUpInside" id="cl8-uE-Oqp"/>
                                                     <action selector="loginBtnPressed:" destination="QsH-px-d6b" eventType="touchUpInside" id="e9S-nI-dvv"/>
                                                 </connections>
                                             </button>
@@ -259,7 +258,6 @@
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="22"/>
                                                 <state key="normal" title="SIGN UP"/>
                                                 <connections>
-                                                    <action selector="askifyButtonPressed:" destination="lxO-jF-GeZ" eventType="touchUpInside" id="o2m-ym-hpa"/>
                                                     <action selector="signupBtnPressed:" destination="ZIG-13-DBJ" eventType="touchUpInside" id="jrD-9v-M00"/>
                                                 </connections>
                                             </button>
@@ -540,7 +538,7 @@
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="22"/>
                                                 <state key="normal" title="ASKIFY!"/>
                                                 <connections>
-                                                    <action selector="askifyButtonPressed:" destination="lxO-jF-GeZ" eventType="touchUpInside" id="rqT-Oe-IpN"/>
+                                                    <action selector="askifyButtonPressed:" destination="lxO-jF-GeZ" eventType="touchUpInside" id="mCd-6C-G1R"/>
                                                 </connections>
                                             </button>
                                         </subviews>
