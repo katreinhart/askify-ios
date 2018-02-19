@@ -10,6 +10,10 @@ import UIKit
 
 class QueueTVCell: UITableViewCell {
 
+    @IBOutlet weak var queuePosition: UILabel!
+    @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet weak var answerButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -17,8 +21,8 @@ class QueueTVCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
+    @IBAction func answerButtonPressed(_ sender: Any) {
+    }
 }

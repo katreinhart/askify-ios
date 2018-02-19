@@ -18,6 +18,15 @@ class QueueVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        QueueDataService.instance.fetchQueue { (success) in
+            if success {
+                debugPrint("Successfully fetched queue")
+                
+            } else {
+                debugPrint("Something went wrong")
+            }
+        }
+        
         queueTV.dataSource = self
         queueTV.delegate = self
     }
@@ -34,6 +43,6 @@ class QueueVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // Actions
     @IBAction func askifyButtonPressed(_ sender: Any) {
-        
+        debugPrint("Askify button pressed!")
     }
 }

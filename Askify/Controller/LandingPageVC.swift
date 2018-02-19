@@ -12,6 +12,10 @@ class LandingPageVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if UserDefaults.standard.bool(forKey: LOGGED_IN_KEY) {
+            let next = self.storyboard?.instantiateViewController(withIdentifier: QUEUE_VC )
+            self.present(next!, animated: true, completion: nil)
+        }
     }
 
     @IBAction func loginBtnPressed(_ sender: Any) {

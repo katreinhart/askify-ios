@@ -22,7 +22,17 @@ class LoginVC: UIViewController {
     
     // Actions
     @IBAction func loginBtnPressed(_ sender: Any) {
-        self.performSegue(withIdentifier: SHOW_LANDING_FROM_LOGIN, sender: nil)
+        guard let email = emailTxt.text else {return}
+        guard let password = passTxt.text else {return}
+        
+        UserDataService.instance.loginUser(email: email, password: password) { (success) in
+            
+            if(success) {
+                self.performSegue(withIdentifier: SHOW_LANDING_FROM_LOGIN, sender: nil)
+            } else {
+                debugPrint("There was an error with login")
+            }
+        }
     }
     
 }
