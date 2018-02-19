@@ -91,7 +91,22 @@ class QueueDataService {
     }
     
     func postQuestion(question: String, completion: @escaping CompletionHandler) {
-        
+        let header = UserDataService.instance.bearerHeader()
+        let body = [
+            "question": question,
+            "fname": UserDataService.instance.name,
+            "cohort": UserDataService.instance.cohort
+        ]
+        debugPrint(header, body, POST_QUESTION_URL)
+        Alamofire.request(POST_QUESTION_URL, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
+            if response.result.error != nil {
+                debugPrint(response.result.error ?? "")
+                completion(false)
+                return
+            } else {
+                completion(true)
+            }
+        }
     }
     
     func postAnswer(answer: String, completion: @escaping CompletionHandler) {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QueueVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class QueueVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextViewDelegate {
     
     @IBOutlet weak var questionTextField: UITextView!
     @IBOutlet weak var askifyButton: UIButton!
@@ -35,6 +35,7 @@ class QueueVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         queueTV.dataSource = self
         queueTV.delegate = self
+        questionTextField.delegate = self
         
         // Add Refresh Control to Table View
         if #available(iOS 10.0, *) {
@@ -57,6 +58,11 @@ class QueueVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 debugPrint("error fetching updated queue")
             }
         }
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        textView.text = ""
+        
     }
     
     // Protocol methods
@@ -89,5 +95,17 @@ class QueueVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     // Actions
     @IBAction func askifyButtonPressed(_ sender: Any) {
         debugPrint("Askify button pressed!")
+        if questionTextField.text == "" || questionTextField.text == "What's got you blocked?" {
+            return
+        } else {
+            QueueDataService.instance.postQuestion(question: questionTextField.text) {
+                (success) in
+                if !success {
+                    debugPrint("Something went wrong")
+                } else {
+                    self.refreshQueueView(self)
+                }
+            }
+        }
     }
 }
