@@ -17,7 +17,18 @@ struct Question {
     var cohort: String
 }
 
+struct AnsweredQuestion {
+    var id: Int
+    var question: String
+    var answered: Bool
+    var answers: [Answer]
+    var user_id: Int
+    var user_name: String?
+    var cohort: String
+}
+
 struct Answer {
     var answer: String
     var user_id: Int
+    var name: String
 }

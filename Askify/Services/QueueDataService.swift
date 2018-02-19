@@ -16,7 +16,7 @@ class QueueDataService {
     
     // Instance variables
     var queue: [Question] = []
-    var archive: [Question] = []
+    var archive: [AnsweredQuestion] = []
     
     func fetchQueue(completion: @escaping CompletionHandler) {
         let header = UserDataService.instance.bearerHeader()
@@ -50,6 +50,43 @@ class QueueDataService {
     }
     
     func fetchArchive(completion: @escaping CompletionHandler) {
+        let header = UserDataService.instance.bearerHeader()
+        archive = []
+        
+        Alamofire.request(ARCHIVE_URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
+            if response.result.error != nil {
+                debugPrint(response.result.error)
+                completion(false)
+                return
+            }
+            
+            guard let data = response.data else {return}
+            let json = JSON(data: data)
+            
+            for (_, value) in json {
+                let q = value["question"].stringValue
+                let userid = value["userid"].intValue
+                let cohort = value["cohort"].stringValue
+                let fname = value["fname"].stringValue
+                let id = value["id"].intValue
+//                let answers = value["answers"].arrayValue
+                
+                let newAnsweredQuestion = AnsweredQuestion(id: id, question: q, answered: true, answers: [], user_id: userid, user_name: fname, cohort: cohort)
+                
+//                for (_, ans) in answers {
+//                    let answer = ans["answer"].stringValue
+//                    let uid = ans["userid"].intValue
+//                    let name = ans["fname"].stringValue
+//                    let newAns = Answer(answer: answer, userid: uid, name: name)
+//
+//                    newAnsweredQuestion.answers.append(newAns)
+//                }
+                self.archive.append(newAnsweredQuestion)
+            }
+            
+            debugPrint(self.archive)
+            completion(true)
+        }
         
     }
     

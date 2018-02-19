@@ -463,6 +463,9 @@
                         <viewLayoutGuide key="safeArea" id="Hyl-q9-C3g"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="gRd-Ka-d2F"/>
+                    <connections>
+                        <outlet property="archiveTV" destination="hMt-SB-VhK" id="XJB-iz-QyR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LX0-s0-wXJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

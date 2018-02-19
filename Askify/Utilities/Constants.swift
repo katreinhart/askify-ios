@@ -36,7 +36,7 @@ let SHOW_LANDING_FROM_LOGIN = "showLandingFromLogin"
 let QUEUE_VC = "queueView"
 let ARCHIVE_VC = "archiveView"
 let QUEUE_CELL = "QueueTVCell"
-let ARCHIVE_CELL = "archiveTVCell"
+let ARCHIVE_CELL = "ArchiveTVCell"
 
 
 // Headers

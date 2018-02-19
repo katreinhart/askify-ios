@@ -10,6 +10,10 @@ import UIKit
 
 class ArchiveTVCell: UITableViewCell {
 
+    @IBOutlet weak var archiveNumberLbl: UILabel!
+    @IBOutlet weak var archiveQuestionLbl: UILabel!
+    @IBOutlet weak var userNameLbl: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

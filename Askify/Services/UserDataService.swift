@@ -79,7 +79,7 @@ class UserDataService {
         
         Alamofire.request(LOGIN_URL, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
             if response.result.error != nil {
-                debugPrint(response.result.error)
+                debugPrint(response.result.error ?? "Error logging in")
                 completion(false)
                 return
             }
@@ -103,7 +103,7 @@ class UserDataService {
         
         Alamofire.request(REGISTER_URL, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
             if response.result.error != nil {
-                debugPrint(response.result.error)
+                debugPrint(response.result.error ?? "Error registering user")
                 completion(false)
                 return
             }
