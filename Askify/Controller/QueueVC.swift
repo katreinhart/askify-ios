@@ -13,9 +13,9 @@ class QueueVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var questionTextField: UITextView!
     @IBOutlet weak var askifyButton: UIButton!
     @IBOutlet weak var queueTV: UITableView!
+    @IBOutlet weak var queuePosition: UILabel!
     
     var queue = [Question]()
-    
     
     private let refreshControl = UIRefreshControl()
     
@@ -71,9 +71,12 @@ class QueueVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         cell.questionLabel.text = question.question
         if String(question.user_id) == UserDataService.instance.userID {
             // show answer button if it is user's own question, not otherwise
-                cell.answerButton.isHidden = false
+            cell.answerButton.isHidden = false
+            cell.userNameLbl.isHidden = true
+            self.queuePosition.text = String(indexPath.row + 1)
         } else {
             cell.answerButton.isHidden = true
+            cell.userNameLbl.text = question.user_name ?? ""
         }
         
         return cell

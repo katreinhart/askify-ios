@@ -13,6 +13,7 @@ class QueueTVCell: UITableViewCell {
     @IBOutlet weak var queuePosition: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var answerButton: UIButton!
+    @IBOutlet weak var userNameLbl: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

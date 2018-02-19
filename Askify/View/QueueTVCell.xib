@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,11 +25,27 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="79.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is where the question will go" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kaa-b6-0GC">
+                        <rect key="frame" x="47" y="0.0" width="185" height="79.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZh-GB-Wro">
                         <rect key="frame" x="12" y="29" width="21" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="PYT-RQ-r0m"/>
                             <constraint firstAttribute="width" constant="21" id="VdW-cb-Pas"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75e-c4-dB0">
+                        <rect key="frame" x="239" y="29" width="65" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="ZQj-6P-vGS"/>
+                            <constraint firstAttribute="width" constant="65" id="pnb-zX-XYV"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
@@ -49,22 +66,18 @@
                             <action selector="answerButtonPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="rG7-0c-KmB"/>
                         </connections>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is where the question will go" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kaa-b6-0GC">
-                        <rect key="frame" x="47" y="0.0" width="185" height="79.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="kaa-b6-0GC" secondAttribute="bottom" id="FQb-bJ-F2z"/>
                     <constraint firstItem="BSd-lI-FCA" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="IjF-LJ-jtH"/>
+                    <constraint firstItem="75e-c4-dB0" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="LSp-xW-hlO"/>
                     <constraint firstItem="kaa-b6-0GC" firstAttribute="leading" secondItem="qZh-GB-Wro" secondAttribute="trailing" constant="14" id="MKL-5M-2GH"/>
                     <constraint firstItem="qZh-GB-Wro" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="29" id="YhK-Ts-baj"/>
                     <constraint firstAttribute="bottom" secondItem="qZh-GB-Wro" secondAttribute="bottom" constant="29.5" id="ZfL-Hh-084"/>
                     <constraint firstItem="qZh-GB-Wro" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="al7-pj-CP6"/>
                     <constraint firstAttribute="trailing" secondItem="BSd-lI-FCA" secondAttribute="trailing" constant="10" id="d8s-cB-J98"/>
                     <constraint firstItem="kaa-b6-0GC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="dLs-yr-oSj"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="75e-c4-dB0" secondAttribute="trailing" id="eYo-3z-Oaa"/>
                     <constraint firstItem="BSd-lI-FCA" firstAttribute="leading" secondItem="kaa-b6-0GC" secondAttribute="trailing" constant="2" id="pOP-I2-I0l"/>
                 </constraints>
             </tableViewCellContentView>
@@ -73,6 +86,7 @@
                 <outlet property="answerButton" destination="BSd-lI-FCA" id="2wV-hf-qFi"/>
                 <outlet property="questionLabel" destination="kaa-b6-0GC" id="gYb-kR-I3v"/>
                 <outlet property="queuePosition" destination="qZh-GB-Wro" id="RF7-x8-oph"/>
+                <outlet property="userNameLbl" destination="75e-c4-dB0" id="fxG-MP-hBl"/>
             </connections>
             <point key="canvasLocation" x="107" y="102"/>
         </tableViewCell>
