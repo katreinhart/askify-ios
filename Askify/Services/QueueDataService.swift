@@ -94,7 +94,7 @@ class QueueDataService {
             "fname": UserDataService.instance.name,
             "cohort": UserDataService.instance.cohort
         ]
-        debugPrint(header, body, POST_QUESTION_URL)
+        
         Alamofire.request(POST_QUESTION_URL, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
             if response.result.error != nil {
                 debugPrint(response.result.error ?? "")

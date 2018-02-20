@@ -17,7 +17,7 @@ let LOGIN_URL = "\(API_BASE_URL)/auth/login"
 let REGISTER_URL = "\(API_BASE_URL)/auth/register"
 let QUEUE_URL = "\(API_BASE_URL)/api/queue"
 let ARCHIVE_URL = "\(API_BASE_URL)/api/archive"
-let POST_QUESTION_URL = "\(API_BASE_URL)/api/questions"
+let POST_QUESTION_URL = "\(API_BASE_URL)/api/questions/"
 
 // UserDefaults keys
 let LOGGED_IN_KEY = "loggedInKey"

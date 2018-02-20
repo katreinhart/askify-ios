@@ -140,7 +140,7 @@ class UserDataService {
     
     func bearerHeader() -> Dictionary<String, String> {
         return [
-            "authorization": "Bearer \(authToken)",
+            "Authorization": "Bearer \(authToken)",
             "Content-Type": "application/json; charset=utf-8"
         ]
     }
