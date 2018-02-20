@@ -44,7 +44,6 @@ class QueueDataService {
                 self.queue.append(newQuestion)
             }
             
-            debugPrint(self.queue)
             completion(true)
         }
     }
@@ -84,7 +83,6 @@ class QueueDataService {
                 self.archive.append(newAnsweredQuestion)
             }
             
-            debugPrint(self.archive)
             completion(true)
         }
     }
