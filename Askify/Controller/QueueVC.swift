@@ -56,6 +56,7 @@ class QueueVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIT
                 
             } else {
                 debugPrint("error fetching updated queue")
+                self.refreshControl.endRefreshing()
             }
         }
     }

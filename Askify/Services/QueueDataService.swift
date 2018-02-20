@@ -25,7 +25,7 @@ class QueueDataService {
         
         Alamofire.request(QUEUE_URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
             if response.result.error != nil {
-                debugPrint(response.result.error)
+                debugPrint(response.result.error ?? "Error fetching queue")
                 completion(false)
                 return
             }
@@ -55,7 +55,7 @@ class QueueDataService {
         
         Alamofire.request(ARCHIVE_URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
             if response.result.error != nil {
-                debugPrint(response.result.error)
+                debugPrint(response.result.error ?? "Error fetching archive")
                 completion(false)
                 return
             }
@@ -87,7 +87,6 @@ class QueueDataService {
             debugPrint(self.archive)
             completion(true)
         }
-        
     }
     
     func postQuestion(question: String, completion: @escaping CompletionHandler) {
