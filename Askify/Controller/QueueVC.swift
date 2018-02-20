@@ -27,6 +27,7 @@ class QueueVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIT
             if success {
                 debugPrint("Successfully fetched queue")
                 self.queue = QueueDataService.instance.queue
+                self.queuePosition.text = String(QueueDataService.instance.queuePosition())
                 self.queueTV.reloadData()
             } else {
                 debugPrint("Something went wrong")
@@ -52,6 +53,7 @@ class QueueVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIT
             if success {
                 self.queue = QueueDataService.instance.queue
                 self.queueTV.reloadData()
+                self.queuePosition.text = String(QueueDataService.instance.queuePosition())
                 self.refreshControl.endRefreshing()
                 
             } else {
@@ -62,8 +64,10 @@ class QueueVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIT
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        textView.text = ""
-        
+        // mocking placeholder text
+        if(textView.text == "What's got you blocked?") {
+            textView.text = ""
+        }
     }
     
     // Protocol methods
@@ -80,7 +84,6 @@ class QueueVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIT
             // show answer button if it is user's own question, not otherwise
             cell.answerButton.isHidden = false
             cell.userNameLbl.isHidden = true
-            self.queuePosition.text = String(indexPath.row + 1)
         } else {
             cell.answerButton.isHidden = true
             cell.userNameLbl.text = question.user_name ?? ""
@@ -93,6 +96,32 @@ class QueueVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIT
         return 80
     }
     
+    // Swipe to edit
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = self.contextualDeleteAction(forRowAtIndexPath: indexPath)
+        let swipeConfig = UISwipeActionsConfiguration(actions: [deleteAction])
+        return swipeConfig
+    }
+    
+    func contextualDeleteAction(forRowAtIndexPath indexPath: IndexPath) -> UIContextualAction {
+        let question = queue[indexPath.row]
+        let action = UIContextualAction(style: .normal, title: "Answered") { (contextAction: UIContextualAction, sourceView: UIView, completionHandler: @escaping CompletionHandler) in
+            debugPrint("Mark Toggled function called")
+            QueueDataService.instance.markQuestionAnswered(id: question.id, answer: "Default answer") { (success) in
+                if(success) {
+                    self.refreshQueueView((Any).self)
+                } else {
+                    debugPrint ("Something went wrong marking question as answered.")
+                }
+            }
+            debugPrint(question)
+        }
+        
+        action.backgroundColor = UIColor.gray
+        
+        return action
+    }
+ 
     // Actions
     @IBAction func askifyButtonPressed(_ sender: Any) {
         debugPrint("Askify button pressed!")
@@ -104,6 +133,8 @@ class QueueVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIT
                 if !success {
                     debugPrint("Something went wrong")
                 } else {
+                    self.questionTextField.text = "What's got you blocked?"
+                    self.askifyButton.isEnabled = false
                     self.refreshQueueView(self)
                 }
             }

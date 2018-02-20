@@ -39,13 +39,7 @@ let ARCHIVE_VC = "archiveView"
 let QUEUE_CELL = "QueueTVCell"
 let ARCHIVE_CELL = "ArchiveTVCell"
 
-
-// Headers
-//let BEARER_HEADER = [
-//    "authorization": "Bearer \(TOKEN)",
-//    "Content-Type": "application/json; charset=utf-8"
-//]
-
+// Header without auth
 let HEADER = [
     "Content-Type": "application/json; charset=utf-8"
 ]

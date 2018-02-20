@@ -18,6 +18,15 @@ class QueueDataService {
     var queue: [Question] = []
     var archive: [AnsweredQuestion] = []
     
+    // Helper function to populate uppper corner indicator as well as determine when to disable
+    func queuePosition() -> Int {
+        let idx = queue.index { (q) -> Bool in
+            return String(q.user_id) == UserDataService.instance.userID
+        }
+        
+        return (idx == nil) ? 0 : idx! + 1
+    }
+    
     func fetchQueue(completion: @escaping CompletionHandler) {
         let header = UserDataService.instance.bearerHeader()
         // Empty out queue so it does not repeat info
@@ -34,13 +43,14 @@ class QueueDataService {
             let json = JSON(data: data)
             
             for (_, value) in json {
+                let id = value["id"].intValue
                 let q = value["question"].stringValue
                 let answered = value["answered"].boolValue
                 let userid = value["userid"].intValue
                 let cohort = value["cohort"].stringValue
                 let fname = value["fname"].stringValue
                 
-                let newQuestion = Question(question: q, answered: answered, answer: nil, user_id: userid, user_name: fname, cohort: cohort)
+                let newQuestion = Question(id: id, question: q, answered: answered, answer: nil, user_id: userid, user_name: fname, cohort: cohort)
                 self.queue.append(newQuestion)
             }
             
@@ -101,6 +111,28 @@ class QueueDataService {
                 completion(false)
                 return
             } else {
+                completion(true)
+            }
+        }
+    }
+    
+    func markQuestionAnswered(id: Int, answer: String, completion: @escaping CompletionHandler) {
+        let header = UserDataService.instance.bearerHeader()
+        let url = "\(API_BASE_URL)/api/questions/\(id)/answers"
+        let body = [
+            "answer": answer,
+            "fname": UserDataService.instance.name,
+            "cohort": UserDataService.instance.cohort
+        ]
+        
+        Alamofire.request(url, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
+            if response.result.error != nil {
+                debugPrint("Something went wrong")
+                debugPrint(response.result.error as Any)
+                completion(false)
+            }
+            else {
+                debugPrint("success")
                 completion(true)
             }
         }

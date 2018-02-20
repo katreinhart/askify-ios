@@ -12,6 +12,7 @@ class ArchiveVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // Outlets
     @IBOutlet weak var archiveTV: UITableView!
+    @IBOutlet weak var queuePosition: UILabel!
     
     // Variables
     var archive : [AnsweredQuestion] = []
@@ -22,6 +23,7 @@ class ArchiveVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         QueueDataService.instance.fetchArchive { (success) in
             if success {
                 self.archive = QueueDataService.instance.archive
+                self.queuePosition.text = String(QueueDataService.instance.queuePosition())
                 self.archiveTV.reloadData()
             } else {
                 debugPrint("Somethign went wrong fetching archive")

@@ -9,6 +9,7 @@
 import Foundation
 
 struct Question {
+    var id: Int
     var question: String
     var answered: Bool
     var answer: String?
