@@ -426,7 +426,7 @@
                                             <constraint firstAttribute="height" constant="34" id="e7Z-Pq-Tm0"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="powered by galvanize" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uF5-1O-kbP">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="powered by galvanize" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="uF5-1O-kbP">
                                         <rect key="frame" x="129" y="38" width="97.5" height="18"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="vwD-gh-W4j"/>
@@ -441,7 +441,7 @@
                                     <constraint firstItem="0wl-Rr-iOH" firstAttribute="top" secondItem="iuX-qA-Fy6" secondAttribute="top" constant="21" id="Lvi-mY-nuz"/>
                                     <constraint firstAttribute="bottom" secondItem="uF5-1O-kbP" secondAttribute="bottom" constant="14" id="SI7-Yy-4gz"/>
                                     <constraint firstAttribute="height" constant="70" id="Syz-cH-LZF"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="uF5-1O-kbP" secondAttribute="trailing" constant="20" symbolic="YES" id="WQo-DQ-4TV"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="uF5-1O-kbP" secondAttribute="trailing" id="WQo-DQ-4TV"/>
                                     <constraint firstItem="0wl-Rr-iOH" firstAttribute="leading" secondItem="iuX-qA-Fy6" secondAttribute="leading" constant="18" id="WtD-KG-1L9"/>
                                     <constraint firstItem="uF5-1O-kbP" firstAttribute="leading" secondItem="iuX-qA-Fy6" secondAttribute="leading" constant="129" id="em7-Xs-JBb"/>
                                     <constraint firstAttribute="trailing" secondItem="EgK-rq-oe8" secondAttribute="trailing" constant="16" id="me4-Hj-Tzh"/>
@@ -504,7 +504,7 @@
                                             <constraint firstAttribute="height" constant="34" id="yBA-M0-YdR"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="powered by galvanize" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2WU-hX-mfY">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="powered by galvanize" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="2WU-hX-mfY">
                                         <rect key="frame" x="129.5" y="38" width="97.5" height="18"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="18" id="20G-Ao-gu9"/>
