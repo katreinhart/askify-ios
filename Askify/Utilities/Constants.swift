@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 // typealias for our completion handler
 typealias CompletionHandler = (_ Success: Bool) -> ()
@@ -49,3 +50,5 @@ let HEADER = [
 let ANSWER_PLACEHOLDER = "Tell us what the answer was..."
 let QUESTION_PLACEHOLDER = "What's got you blocked?"
 
+// Colors
+let GALVANIZE_ORANGE = #colorLiteral(red: 0.8984182477, green: 0.5932732224, blue: 0.2706963718, alpha: 1)

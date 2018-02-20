@@ -23,6 +23,7 @@ class inputAnswerTVCell: UITableViewCell, UITextViewDelegate {
         super.awakeFromNib()
         // Initialization code
         answerInput.text = ANSWER_PLACEHOLDER
+        answerInput.delegate = self
     }
     
     // Text View Delegate methods

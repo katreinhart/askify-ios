@@ -33,6 +33,14 @@ class QueueVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIT
                 self.queue = QueueDataService.instance.queue
                 self.queuePosition.text = String(QueueDataService.instance.queuePosition())
                 self.queueTV.reloadData()
+                
+                if (self.queuePosition.text == "0") {
+                    self.askifyButton.isEnabled = true
+                    self.askifyButton.backgroundColor = GALVANIZE_ORANGE
+                } else {
+                    self.askifyButton.isEnabled = false
+                    self.askifyButton.backgroundColor = UIColor.lightGray
+                }
             } else {
                 debugPrint("Something went wrong")
             }
@@ -58,6 +66,14 @@ class QueueVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIT
                 self.queue = QueueDataService.instance.queue
                 self.queueTV.reloadData()
                 self.queuePosition.text = String(QueueDataService.instance.queuePosition())
+                if (self.queuePosition.text == "0") {
+                    self.askifyButton.isEnabled = true
+                    self.askifyButton.backgroundColor = GALVANIZE_ORANGE
+                } else {
+                    self.askifyButton.isEnabled = false
+                    self.askifyButton.backgroundColor = UIColor.lightGray
+                }
+                
                 self.refreshControl.endRefreshing()
                 
             } else {
@@ -125,18 +141,30 @@ class QueueVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIT
     }
     
     func contextualMarkAnsweredAction(forRowAtIndexPath indexPath: IndexPath) -> UIContextualAction {
-
-        let action = UIContextualAction(style: .normal, title: "Answered") { (contextAction: UIContextualAction, sourceView: UIView, completionHandler: @escaping CompletionHandler) in
+        let question = self.queue[indexPath.row]
+        
+        let action = UIContextualAction(style: .normal, title: "Mark Answered") { (contextAction: UIContextualAction, sourceView: UIView, completion: @escaping CompletionHandler) in
             
-            self.editingQuestion = self.queue[indexPath.row]
-            self.queue.insert(self.placeholderQ, at: indexPath.row)
-            self.isEditingAtIndex = indexPath.row + 1
-            self.queueTV.reloadData()
+            if String(question.user_id) == UserDataService.instance.userID {
+                self.editingQuestion = self.queue[indexPath.row]
+                self.queue.insert(self.placeholderQ, at: indexPath.row)
+                self.isEditingAtIndex = indexPath.row + 1
+                self.queueTV.reloadData()
+                completion(true)
+            } else {
+                completion(false)
+            }
         }
         
-        action.backgroundColor = UIColor.gray
+        if String(question.user_id) == UserDataService.instance.userID {
+            action.backgroundColor = UIColor.orange
+        } else {
+            action.backgroundColor = UIColor.white
+            action.title = ""
+        }
         
         return action
+    
     }
     
     // UpdateAnswerDelegate methods
@@ -145,9 +173,8 @@ class QueueVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIT
         debugPrint("did press cancel button")
         queue[isEditingAtIndex] = editingQuestion!
         isEditingAtIndex = 0
-        
         editingQuestion = nil
-        queueTV.reloadData()
+        self.refreshQueueView((Any).self)
     }
     
     func didPressSubmitButton(_ sender: inputAnswerTVCell, answer: String) {
