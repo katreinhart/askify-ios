@@ -112,7 +112,6 @@ class UserDataService {
             self.setUserInfo(data: data)
             completion(true)
         }
-        
     }
     
     func logoutUser() {
@@ -138,6 +137,7 @@ class UserDataService {
         self.authToken = token
     }
     
+    // bearerHeader is a function rather than a string to avoid the bug from last project, where token did not update if user logged out then back in as another user
     func bearerHeader() -> Dictionary<String, String> {
         return [
             "Authorization": "Bearer \(authToken)",

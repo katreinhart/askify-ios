@@ -231,31 +231,58 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="j21-s2-GGH">
-                                        <rect key="frame" x="50" y="233" width="275" height="270"/>
+                                        <rect key="frame" x="50" y="233" width="275" height="345"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sSX-AP-w9H">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sSX-AP-w9H">
                                                 <rect key="frame" x="0.0" y="0.0" width="275" height="45"/>
                                                 <color key="backgroundColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" textContentType="email"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="paw-lh-vdI">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="paw-lh-vdI">
                                                 <rect key="frame" x="0.0" y="75" width="275" height="45"/>
                                                 <color key="backgroundColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="your name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fES-J0-mgJ">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="your name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fES-J0-mgJ">
                                                 <rect key="frame" x="0.0" y="150" width="275" height="45"/>
                                                 <color key="backgroundColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" textContentType="name"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ri-rr-laN" customClass="RoundedButton" customModule="Askify" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DoM-gf-uqF">
                                                 <rect key="frame" x="0.0" y="225" width="275" height="45"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="your cohort" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VgP-yW-Cgk">
+                                                        <rect key="frame" x="0.0" y="11.5" width="267" height="22.5"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBL-Ds-PYI">
+                                                        <rect key="frame" x="0.0" y="0.0" width="275" height="45"/>
+                                                        <connections>
+                                                            <action selector="selectCohortBtnPressed:" destination="ZIG-13-DBJ" eventType="touchUpInside" id="3TT-cF-m3D"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="TBL-Ds-PYI" secondAttribute="bottom" id="3mp-Rk-Jxn"/>
+                                                    <constraint firstItem="TBL-Ds-PYI" firstAttribute="leading" secondItem="DoM-gf-uqF" secondAttribute="leading" id="6FD-7I-QeH"/>
+                                                    <constraint firstAttribute="trailing" secondItem="VgP-yW-Cgk" secondAttribute="trailing" constant="8" id="EId-ah-Atz"/>
+                                                    <constraint firstAttribute="trailing" secondItem="TBL-Ds-PYI" secondAttribute="trailing" id="XOv-IR-XJj"/>
+                                                    <constraint firstItem="VgP-yW-Cgk" firstAttribute="centerY" secondItem="DoM-gf-uqF" secondAttribute="centerY" id="wOm-Hg-62O"/>
+                                                    <constraint firstItem="VgP-yW-Cgk" firstAttribute="leading" secondItem="DoM-gf-uqF" secondAttribute="leading" id="yUJ-I7-ZtN"/>
+                                                    <constraint firstItem="TBL-Ds-PYI" firstAttribute="top" secondItem="DoM-gf-uqF" secondAttribute="top" id="yay-hB-yu6"/>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ri-rr-laN" customClass="RoundedButton" customModule="Askify" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="300" width="275" height="45"/>
                                                 <color key="backgroundColor" red="0.86666666670000003" green="0.52156862749999999" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="Gli-eM-rXu"/>
@@ -276,6 +303,8 @@
                                             <constraint firstItem="fES-J0-mgJ" firstAttribute="width" secondItem="0ri-rr-laN" secondAttribute="width" id="nbB-3C-ix2"/>
                                             <constraint firstItem="paw-lh-vdI" firstAttribute="width" secondItem="j21-s2-GGH" secondAttribute="width" id="peC-Mt-Fg5"/>
                                             <constraint firstItem="fES-J0-mgJ" firstAttribute="height" secondItem="paw-lh-vdI" secondAttribute="height" id="r7r-zy-GWL"/>
+                                            <constraint firstItem="DoM-gf-uqF" firstAttribute="height" secondItem="fES-J0-mgJ" secondAttribute="height" id="xiz-PI-rxP"/>
+                                            <constraint firstItem="DoM-gf-uqF" firstAttribute="width" secondItem="fES-J0-mgJ" secondAttribute="width" id="zgQ-4O-qts"/>
                                         </constraints>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="powered by galvanize" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uIH-t5-AHZ">
@@ -284,15 +313,25 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IWx-il-nDb">
+                                        <rect key="frame" x="0.0" y="532" width="375" height="135"/>
+                                        <color key="backgroundColor" red="0.72148895260000001" green="0.72161453959999999" blue="0.72148102520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="135" id="Q61-KS-9OK"/>
+                                        </constraints>
+                                    </pickerView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.1333333333" green="0.23529411759999999" blue="0.29803921570000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="j21-s2-GGH" firstAttribute="top" secondItem="l2r-cS-lJA" secondAttribute="top" constant="233" id="8dE-Wm-fv8"/>
+                                    <constraint firstItem="IWx-il-nDb" firstAttribute="leading" secondItem="l2r-cS-lJA" secondAttribute="leading" id="8zA-yh-MLj"/>
                                     <constraint firstItem="nqY-Jm-vCT" firstAttribute="top" secondItem="l2r-cS-lJA" secondAttribute="top" constant="50" id="Chu-FQ-hTA"/>
                                     <constraint firstItem="uIH-t5-AHZ" firstAttribute="top" secondItem="nqY-Jm-vCT" secondAttribute="bottom" constant="-20" id="J5r-8T-TNO"/>
                                     <constraint firstItem="j21-s2-GGH" firstAttribute="centerX" secondItem="l2r-cS-lJA" secondAttribute="centerX" id="RI2-gK-Phj"/>
                                     <constraint firstItem="uIH-t5-AHZ" firstAttribute="centerX" secondItem="l2r-cS-lJA" secondAttribute="centerX" id="Ttd-L9-56W"/>
+                                    <constraint firstAttribute="trailing" secondItem="IWx-il-nDb" secondAttribute="trailing" id="aik-iI-RfW"/>
                                     <constraint firstItem="j21-s2-GGH" firstAttribute="top" secondItem="uIH-t5-AHZ" secondAttribute="bottom" constant="89" id="bsi-PD-yuf"/>
+                                    <constraint firstAttribute="bottom" secondItem="IWx-il-nDb" secondAttribute="bottom" id="vfr-c8-lYq"/>
                                     <constraint firstItem="j21-s2-GGH" firstAttribute="centerX" secondItem="nqY-Jm-vCT" secondAttribute="centerX" id="yWh-Pm-rQ2"/>
                                 </constraints>
                             </view>
@@ -307,15 +346,18 @@
                         <viewLayoutGuide key="safeArea" id="2T9-ux-LKC"/>
                     </view>
                     <connections>
+                        <outlet property="cohortLbl" destination="VgP-yW-Cgk" id="5e4-c1-gS6"/>
+                        <outlet property="cohortPicker" destination="IWx-il-nDb" id="dhQ-Au-f4R"/>
                         <outlet property="emailTxtField" destination="sSX-AP-w9H" id="f4o-BC-iZ3"/>
                         <outlet property="firstNameTxtField" destination="fES-J0-mgJ" id="j3R-bg-49P"/>
                         <outlet property="passwordTxtField" destination="paw-lh-vdI" id="H0b-D3-Oub"/>
+                        <outlet property="signUpBtn" destination="0ri-rr-laN" id="At4-iv-2nz"/>
                         <segue destination="wNh-Bt-MCU" kind="show" identifier="showLandingFromSignup" id="DzA-At-yQW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EWB-gh-Bhh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="14" y="507"/>
+            <point key="canvasLocation" x="13.6" y="506.89655172413796"/>
         </scene>
         <!--Tab NavigationVC-->
         <scene sceneID="6WG-8a-ENL">

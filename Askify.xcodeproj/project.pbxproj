@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2BB53E104727DC330C3959BC /* Pods_AskifyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 561FAAD72F51B476E5D10173 /* Pods_AskifyUITests.framework */; };
+		4611D289203CD6C50097F45C /* CohortDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4611D288203CD6C50097F45C /* CohortDataService.swift */; };
 		462F0A8920377B230078AB55 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F0A8820377B230078AB55 /* User.swift */; };
 		462F0A8B203780730078AB55 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F0A8A203780730078AB55 /* LoginVC.swift */; };
 		462F0A8E203789730078AB55 /* QueueTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F0A8C203789730078AB55 /* QueueTVCell.swift */; };
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4611D288203CD6C50097F45C /* CohortDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CohortDataService.swift; sourceTree = "<group>"; };
 		462F0A8820377B230078AB55 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		462F0A8A203780730078AB55 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		462F0A8C203789730078AB55 /* QueueTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueTVCell.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 			children = (
 				464A81A2203777A000948DFF /* UserDataService.swift */,
 				464A81A4203777B600948DFF /* QueueDataService.swift */,
+				4611D288203CD6C50097F45C /* CohortDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 				462F0A8E203789730078AB55 /* QueueTVCell.swift in Sources */,
 				464A816D20375D0300948DFF /* AppDelegate.swift in Sources */,
 				464A81A02037778B00948DFF /* Queue.swift in Sources */,
+				4611D289203CD6C50097F45C /* CohortDataService.swift in Sources */,
 				462F0A9720378C150078AB55 /* RegisterVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
