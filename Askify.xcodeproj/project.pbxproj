@@ -19,6 +19,8 @@
 		462F0A99203791AF0078AB55 /* ArchiveVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F0A98203791AF0078AB55 /* ArchiveVC.swift */; };
 		462F0A9C203C98240078AB55 /* inputAnswerTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F0A9A203C98240078AB55 /* inputAnswerTVCell.swift */; };
 		462F0A9D203C98240078AB55 /* inputAnswerTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 462F0A9B203C98240078AB55 /* inputAnswerTVCell.xib */; };
+		462F0A9F203CC7460078AB55 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F0A9E203CC7460078AB55 /* Extensions.swift */; };
+		462F0AA1203CC8D00078AB55 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F0AA0203CC8D00078AB55 /* RoundedButton.swift */; };
 		464A816D20375D0300948DFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A816C20375D0300948DFF /* AppDelegate.swift */; };
 		464A816F20375D0300948DFF /* LandingPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A816E20375D0300948DFF /* LandingPageVC.swift */; };
 		464A817220375D0300948DFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 464A817020375D0300948DFF /* Main.storyboard */; };
@@ -64,6 +66,8 @@
 		462F0A98203791AF0078AB55 /* ArchiveVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveVC.swift; sourceTree = "<group>"; };
 		462F0A9A203C98240078AB55 /* inputAnswerTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inputAnswerTVCell.swift; sourceTree = "<group>"; };
 		462F0A9B203C98240078AB55 /* inputAnswerTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = inputAnswerTVCell.xib; sourceTree = "<group>"; };
+		462F0A9E203CC7460078AB55 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		462F0AA0203CC8D00078AB55 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		464A816920375D0300948DFF /* Askify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Askify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		464A816C20375D0300948DFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		464A816E20375D0300948DFF /* LandingPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageVC.swift; sourceTree = "<group>"; };
@@ -196,9 +200,9 @@
 			children = (
 				464A816E20375D0300948DFF /* LandingPageVC.swift */,
 				462F0A8A203780730078AB55 /* LoginVC.swift */,
-				464A819D20376A8A00948DFF /* QueueVC.swift */,
-				462F0A94203789BA0078AB55 /* TabNavigationVC.swift */,
 				462F0A9620378C150078AB55 /* RegisterVC.swift */,
+				462F0A94203789BA0078AB55 /* TabNavigationVC.swift */,
+				464A819D20376A8A00948DFF /* QueueVC.swift */,
 				462F0A98203791AF0078AB55 /* ArchiveVC.swift */,
 			);
 			path = Controller;
@@ -222,6 +226,7 @@
 				462F0A91203789830078AB55 /* ArchiveTVCell.xib */,
 				462F0A9A203C98240078AB55 /* inputAnswerTVCell.swift */,
 				462F0A9B203C98240078AB55 /* inputAnswerTVCell.xib */,
+				462F0AA0203CC8D00078AB55 /* RoundedButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -239,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				464A81A7203777C400948DFF /* Constants.swift */,
+				462F0A9E203CC7460078AB55 /* Extensions.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -548,6 +554,8 @@
 				462F0A8920377B230078AB55 /* User.swift in Sources */,
 				462F0A8B203780730078AB55 /* LoginVC.swift in Sources */,
 				464A81A8203777C400948DFF /* Constants.swift in Sources */,
+				462F0AA1203CC8D00078AB55 /* RoundedButton.swift in Sources */,
+				462F0A9F203CC7460078AB55 /* Extensions.swift in Sources */,
 				462F0A8E203789730078AB55 /* QueueTVCell.swift in Sources */,
 				464A816D20375D0300948DFF /* AppDelegate.swift in Sources */,
 				464A81A02037778B00948DFF /* Queue.swift in Sources */,

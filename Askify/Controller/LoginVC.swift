@@ -17,6 +17,7 @@ class LoginVC: UIViewController {
     // Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
     }
 
     

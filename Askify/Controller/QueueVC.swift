@@ -26,7 +26,7 @@ class QueueVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIT
     // Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.hideKeyboardWhenTappedAround() 
         QueueDataService.instance.fetchQueue { (success) in
             if success {
                 debugPrint("Successfully fetched queue")
@@ -73,7 +73,7 @@ class QueueVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIT
                     self.askifyButton.isEnabled = false
                     self.askifyButton.backgroundColor = UIColor.lightGray
                 }
-                
+                        
                 self.refreshControl.endRefreshing()
                 
             } else {
@@ -96,8 +96,7 @@ class QueueVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIT
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        debugPrint("cell for row at", indexPath.row)
-        debugPrint(queue.count)
+
         let question = self.queue[indexPath.row]
         
         if question.id == placeholderQ.id {
@@ -170,7 +169,6 @@ class QueueVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIT
     // UpdateAnswerDelegate methods
     
     func didPressCancelButton(_ sender: inputAnswerTVCell) {
-        debugPrint("did press cancel button")
         queue[isEditingAtIndex] = editingQuestion!
         isEditingAtIndex = 0
         editingQuestion = nil
@@ -191,13 +189,11 @@ class QueueVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIT
                 debugPrint ("Something went wrong marking question as answered.")
             }
         }
-        debugPrint(question)
     }
  
     // Actions
     @IBAction func askifyButtonPressed(_ sender: Any) {
-        debugPrint("Askify button pressed!")
-        if questionTextField.text == "" || questionTextField.text == "What's got you blocked?" {
+        if questionTextField.text == "" || questionTextField.text == QUESTION_PLACEHOLDER {
             return
         } else {
             QueueDataService.instance.postQuestion(question: questionTextField.text) {
@@ -205,7 +201,7 @@ class QueueVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIT
                 if !success {
                     debugPrint("Something went wrong posting question")
                 } else {
-                    self.questionTextField.text = "What's got you blocked?"
+                    self.questionTextField.text = QUESTION_PLACEHOLDER
                     self.askifyButton.isEnabled = false
                     self.refreshQueueView(self)
                 }

@@ -44,7 +44,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="kgT-lV-IqX">
                                         <rect key="frame" x="50" y="305" width="275" height="135"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ek2-wd-223">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ek2-wd-223" customClass="RoundedButton" customModule="Askify" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="275" height="45"/>
                                                 <color key="backgroundColor" red="0.86666666670000003" green="0.52156862749999999" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -52,11 +52,16 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="22"/>
                                                 <state key="normal" title="LOG IN"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="loginBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dEt-Nq-71K"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wmu-Sc-bDj">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wmu-Sc-bDj" customClass="RoundedButton" customModule="Askify" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="90" width="275" height="45"/>
                                                 <color key="backgroundColor" red="0.86666666670000003" green="0.52156862749999999" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -146,7 +151,7 @@
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAH-2l-Oft">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAH-2l-Oft" customClass="RoundedButton" customModule="Askify" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="150" width="275" height="45"/>
                                                 <color key="backgroundColor" red="0.86666666670000003" green="0.52156862749999999" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -249,7 +254,7 @@
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" textContentType="name"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ri-rr-laN">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ri-rr-laN" customClass="RoundedButton" customModule="Askify" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="225" width="275" height="45"/>
                                                 <color key="backgroundColor" red="0.86666666670000003" green="0.52156862749999999" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -549,7 +554,7 @@
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                                             </textView>
-                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qnk-iD-LB9">
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qnk-iD-LB9" customClass="RoundedButton" customModule="Askify" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="112" width="325" height="50"/>
                                                 <color key="backgroundColor" red="0.72148895260000001" green="0.72161453959999999" blue="0.72148102520000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -605,6 +610,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Ajq-pO-Qkz"/>
+        <segue reference="DzA-At-yQW"/>
     </inferredMetricsTieBreakers>
 </document>
