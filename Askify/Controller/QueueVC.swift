@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QueueVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextViewDelegate {
+class QueueVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextViewDelegate, UpdateAnswerDelegate {
     
     @IBOutlet weak var questionTextField: UITextView!
     @IBOutlet weak var askifyButton: UIButton!
@@ -18,6 +18,10 @@ class QueueVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIT
     var queue = [Question]()
     
     private let refreshControl = UIRefreshControl()
+    private let placeholderQ = Question(id: 0, question: "", answered: false, answer: "", user_id: 0, user_name: nil, cohort: "")
+    
+    private var isEditingAtIndex: Int = 0
+    private var editingQuestion: Question?
     
     // Lifecycle methods
     override func viewDidLoad() {
@@ -65,19 +69,29 @@ class QueueVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIT
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         // mocking placeholder text
-        if(textView.text == "What's got you blocked?") {
+        if(textView.text == QUESTION_PLACEHOLDER) {
             textView.text = ""
         }
     }
     
-    // Protocol methods
+    // Table view methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return QueueDataService.instance.queue.count
+        return self.queue.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        debugPrint("cell for row at", indexPath.row)
+        debugPrint(queue.count)
+        let question = self.queue[indexPath.row]
+        
+        if question.id == placeholderQ.id {
+            let cell = Bundle.main.loadNibNamed(ANSWER_CELL, owner: self, options: nil)?.first as! inputAnswerTVCell
+            cell.delegate = self
+            return cell
+        }
+        
         let cell = Bundle.main.loadNibNamed(QUEUE_CELL, owner: self, options: nil)?.first as! QueueTVCell
-        let question = QueueDataService.instance.queue[indexPath.row]
+        
         cell.queuePosition.text = String(indexPath.row + 1)
         cell.questionLabel.text = question.question
         if String(question.user_id) == UserDataService.instance.userID {
@@ -88,38 +102,69 @@ class QueueVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIT
             cell.answerButton.isHidden = true
             cell.userNameLbl.text = question.user_name ?? ""
         }
-        
         return cell
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        if isEditingAtIndex == 0 || (indexPath.row + 1) != isEditingAtIndex {
+            // normal cells are 80 height
+            return 80
+        } else {
+            // special input answer cell is 173 height
+            return 173
+        }
+        
     }
     
     // Swipe to edit
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteAction = self.contextualDeleteAction(forRowAtIndexPath: indexPath)
+        let deleteAction = self.contextualMarkAnsweredAction(forRowAtIndexPath: indexPath)
         let swipeConfig = UISwipeActionsConfiguration(actions: [deleteAction])
         return swipeConfig
     }
     
-    func contextualDeleteAction(forRowAtIndexPath indexPath: IndexPath) -> UIContextualAction {
-        let question = queue[indexPath.row]
+    func contextualMarkAnsweredAction(forRowAtIndexPath indexPath: IndexPath) -> UIContextualAction {
+
         let action = UIContextualAction(style: .normal, title: "Answered") { (contextAction: UIContextualAction, sourceView: UIView, completionHandler: @escaping CompletionHandler) in
-            debugPrint("Mark Toggled function called")
-            QueueDataService.instance.markQuestionAnswered(id: question.id, answer: "Default answer") { (success) in
-                if(success) {
-                    self.refreshQueueView((Any).self)
-                } else {
-                    debugPrint ("Something went wrong marking question as answered.")
-                }
-            }
-            debugPrint(question)
+            
+            self.editingQuestion = self.queue[indexPath.row]
+            self.queue.insert(self.placeholderQ, at: indexPath.row)
+            self.isEditingAtIndex = indexPath.row + 1
+            self.queueTV.reloadData()
         }
         
         action.backgroundColor = UIColor.gray
         
         return action
+    }
+    
+    // UpdateAnswerDelegate methods
+    
+    func didPressCancelButton(_ sender: inputAnswerTVCell) {
+        debugPrint("did press cancel button")
+        queue[isEditingAtIndex] = editingQuestion!
+        isEditingAtIndex = 0
+        
+        editingQuestion = nil
+        queueTV.reloadData()
+    }
+    
+    func didPressSubmitButton(_ sender: inputAnswerTVCell, answer: String) {
+        guard let question = editingQuestion else {return}
+        
+        QueueDataService.instance.markQuestionAnswered(id: question.id, answer: answer) { (success) in
+            if(success) {
+                self.queue = self.queue.filter({ (q) -> Bool in
+                    return q.id != 0
+                })
+                self.isEditingAtIndex = 0
+                self.refreshQueueView((Any).self)
+            } else {
+                debugPrint ("Something went wrong marking question as answered.")
+            }
+        }
+        debugPrint(question)
     }
  
     // Actions
@@ -131,7 +176,7 @@ class QueueVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIT
             QueueDataService.instance.postQuestion(question: questionTextField.text) {
                 (success) in
                 if !success {
-                    debugPrint("Something went wrong")
+                    debugPrint("Something went wrong posting question")
                 } else {
                     self.questionTextField.text = "What's got you blocked?"
                     self.askifyButton.isEnabled = false

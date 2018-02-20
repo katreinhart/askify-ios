@@ -38,9 +38,14 @@ let QUEUE_VC = "queueView"
 let ARCHIVE_VC = "archiveView"
 let QUEUE_CELL = "QueueTVCell"
 let ARCHIVE_CELL = "ArchiveTVCell"
+let ANSWER_CELL = "inputAnswerTVCell"
 
 // Header without auth
 let HEADER = [
     "Content-Type": "application/json; charset=utf-8"
 ]
+
+// Placeholders
+let ANSWER_PLACEHOLDER = "Tell us what the answer was..."
+let QUESTION_PLACEHOLDER = "What's got you blocked?"
 
