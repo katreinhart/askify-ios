@@ -34,10 +34,14 @@ let TO_LOGIN = "toLogin"
 let TO_REGISTER = "toRegister"
 let SHOW_LANDING_FROM_SIGNUP = "showLandingFromSignup"
 let SHOW_LANDING_FROM_LOGIN = "showLandingFromLogin"
+let LOGGED_IN_SHOW_TAB_VC = "loggedInShowTabVC"
+let SHOW_SPLASH = "showLanding"
 
 // Storyboard & XIB IDs
 let QUEUE_VC = "queueView"
 let ARCHIVE_VC = "archiveView"
+let PROFILE_VC = "profileView"
+let NAV_VC = "navigationView"
 let QUEUE_CELL = "QueueTVCell"
 let ARCHIVE_CELL = "ArchiveTVCell"
 let ANSWER_CELL = "inputAnswerTVCell"
@@ -53,3 +57,12 @@ let QUESTION_PLACEHOLDER = "What's got you blocked?"
 
 // Colors
 let GALVANIZE_ORANGE = #colorLiteral(red: 0.8984182477, green: 0.5932732224, blue: 0.2706963718, alpha: 1)
+
+// Errors
+let ERROR_FETCHING_QUEUE = "Error fetching queue"
+let ERROR_FETCHING_ARCHIVE = "Error fetching archive"
+let ERROR_SIGNING_IN = "Error signing in"
+let ERROR_REGISTERING_USER = "Error registering user"
+let ERROR_POSTING_QUESTION = "Error posting question"
+let ERROR_POSTING_RESPONSE = "Error posting response"
+let ERROR_FETCHING_COHORTS = "Error fetching cohort list"

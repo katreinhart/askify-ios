@@ -79,7 +79,7 @@ class UserDataService {
         
         Alamofire.request(LOGIN_URL, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
             if response.result.error != nil {
-                debugPrint(response.result.error ?? "Error logging in")
+                debugPrint(response.result.error ?? ERROR_SIGNING_IN)
                 completion(false)
                 return
             }
@@ -103,7 +103,7 @@ class UserDataService {
         
         Alamofire.request(REGISTER_URL, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
             if response.result.error != nil {
-                debugPrint(response.result.error ?? "Error registering user")
+                debugPrint(response.result.error ?? ERROR_REGISTERING_USER)
                 completion(false)
                 return
             }
@@ -120,6 +120,7 @@ class UserDataService {
         self.authToken = ""
         self.userEmail = ""
         self.cohort = ""
+        self.isLoggedIn = false
     }
     
     func setUserInfo(data: Data) {
@@ -135,6 +136,8 @@ class UserDataService {
         self.cohort = cohort
         self.userEmail = email
         self.authToken = token
+        
+        self.isLoggedIn = true
     }
     
     // bearerHeader is a function rather than a string to avoid the bug from last project, where token did not update if user logged out then back in as another user

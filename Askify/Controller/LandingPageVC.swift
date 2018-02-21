@@ -12,8 +12,12 @@ class LandingPageVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if UserDefaults.standard.bool(forKey: LOGGED_IN_KEY) {
-            let next = self.storyboard?.instantiateViewController(withIdentifier: QUEUE_VC )
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if UserDataService.instance.isLoggedIn {
+            let next = self.storyboard?.instantiateViewController(withIdentifier: NAV_VC )
             self.present(next!, animated: true, completion: nil)
         }
     }

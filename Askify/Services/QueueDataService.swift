@@ -20,6 +20,9 @@ class QueueDataService {
     
     // Helper function to populate uppper corner indicator as well as determine when to disable
     func queuePosition() -> Int {
+        if queue.count == 0 {
+            return 0
+        }
         let idx = queue.index { (q) -> Bool in
             return String(q.user_id) == UserDataService.instance.userID
         }
@@ -34,7 +37,12 @@ class QueueDataService {
         
         Alamofire.request(QUEUE_URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
             if response.result.error != nil {
-                debugPrint(response.result.error ?? "Error fetching queue")
+                debugPrint(response.result.error ?? ERROR_FETCHING_QUEUE)
+                if(response.data?.count == 0) {
+                    debugPrint("Zero entries found")
+                    completion(true)
+                    return
+                }
                 completion(false)
                 return
             }
@@ -64,7 +72,7 @@ class QueueDataService {
         
         Alamofire.request(ARCHIVE_URL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
             if response.result.error != nil {
-                debugPrint(response.result.error ?? "Error fetching archive")
+                debugPrint(response.result.error ?? ERROR_FETCHING_ARCHIVE)
                 completion(false)
                 return
             }
@@ -127,7 +135,7 @@ class QueueDataService {
         
         Alamofire.request(url, method: .post, parameters: body, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
             if response.result.error != nil {
-                debugPrint("Something went wrong")
+                debugPrint(ERROR_POSTING_RESPONSE)
                 debugPrint(response.result.error as Any)
                 completion(false)
             }

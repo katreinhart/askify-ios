@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2BB53E104727DC330C3959BC /* Pods_AskifyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 561FAAD72F51B476E5D10173 /* Pods_AskifyUITests.framework */; };
 		4611D289203CD6C50097F45C /* CohortDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4611D288203CD6C50097F45C /* CohortDataService.swift */; };
+		4611D28B203E076B0097F45C /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4611D28A203E076B0097F45C /* ProfileVC.swift */; };
 		462F0A8920377B230078AB55 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F0A8820377B230078AB55 /* User.swift */; };
 		462F0A8B203780730078AB55 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F0A8A203780730078AB55 /* LoginVC.swift */; };
 		462F0A8E203789730078AB55 /* QueueTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462F0A8C203789730078AB55 /* QueueTVCell.swift */; };
@@ -57,6 +58,7 @@
 
 /* Begin PBXFileReference section */
 		4611D288203CD6C50097F45C /* CohortDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CohortDataService.swift; sourceTree = "<group>"; };
+		4611D28A203E076B0097F45C /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		462F0A8820377B230078AB55 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		462F0A8A203780730078AB55 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		462F0A8C203789730078AB55 /* QueueTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueTVCell.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				462F0A94203789BA0078AB55 /* TabNavigationVC.swift */,
 				464A819D20376A8A00948DFF /* QueueVC.swift */,
 				462F0A98203791AF0078AB55 /* ArchiveVC.swift */,
+				4611D28A203E076B0097F45C /* ProfileVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 				462F0A95203789BA0078AB55 /* TabNavigationVC.swift in Sources */,
 				462F0A9C203C98240078AB55 /* inputAnswerTVCell.swift in Sources */,
 				464A816F20375D0300948DFF /* LandingPageVC.swift in Sources */,
+				4611D28B203E076B0097F45C /* ProfileVC.swift in Sources */,
 				462F0A92203789830078AB55 /* ArchiveTVCell.swift in Sources */,
 				464A81A3203777A000948DFF /* UserDataService.swift in Sources */,
 				464A819E20376A8A00948DFF /* QueueVC.swift in Sources */,

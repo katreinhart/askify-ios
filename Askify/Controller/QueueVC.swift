@@ -26,10 +26,10 @@ class QueueVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIT
     // Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.hideKeyboardWhenTappedAround() 
+        self.hideKeyboardWhenTappedAround()
+        
         QueueDataService.instance.fetchQueue { (success) in
             if success {
-                debugPrint("Successfully fetched queue")
                 self.queue = QueueDataService.instance.queue
                 self.queuePosition.text = String(QueueDataService.instance.queuePosition())
                 self.queueTV.reloadData()
@@ -42,7 +42,7 @@ class QueueVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIT
                     self.askifyButton.backgroundColor = UIColor.lightGray
                 }
             } else {
-                debugPrint("Something went wrong")
+                debugPrint(ERROR_FETCHING_QUEUE)
             }
         }
         

@@ -17,6 +17,7 @@ class TabNavigationVC: UIViewController {
     // Variables
     var queueVC: UIViewController!
     var archiveVC: UIViewController!
+    var profileVC: UIViewController!
     
     var viewControllers: [UIViewController]!
     
@@ -29,13 +30,15 @@ class TabNavigationVC: UIViewController {
         
         queueVC = storyboard.instantiateViewController(withIdentifier: QUEUE_VC)
         archiveVC = storyboard.instantiateViewController(withIdentifier: ARCHIVE_VC)
+        profileVC = storyboard.instantiateViewController(withIdentifier: PROFILE_VC)
         
-        viewControllers = [queueVC, archiveVC]
+        viewControllers = [queueVC, archiveVC, profileVC]
         
         Buttons[selectedIndex].isSelected = true
         
         tabPressed(Buttons[selectedIndex])
     }
+    
     @IBAction func tabPressed(_ sender: UIButton) {
         let previousIndex = selectedIndex
         selectedIndex = sender.tag

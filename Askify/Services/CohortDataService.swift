@@ -19,7 +19,7 @@ class CohortDataService {
         
         Alamofire.request(FETCH_COHORT_LIST, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
             if response.result.error != nil {
-                debugPrint("error fetching cohort list")
+                debugPrint(ERROR_FETCHING_COHORTS)
                 completion(false)
             } else {
                 guard let data = response.data else { return }
