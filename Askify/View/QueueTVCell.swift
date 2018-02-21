@@ -12,8 +12,8 @@ class QueueTVCell: UITableViewCell {
 
     @IBOutlet weak var queuePosition: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
-    @IBOutlet weak var answerButton: UIButton!
     @IBOutlet weak var userNameLbl: UILabel!
+    @IBOutlet weak var background: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,7 +23,5 @@ class QueueTVCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-    
-    @IBAction func answerButtonPressed(_ sender: Any) {
-    }
+
 }

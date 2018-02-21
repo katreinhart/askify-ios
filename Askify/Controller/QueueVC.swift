@@ -111,11 +111,11 @@ class QueueVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIT
         cell.questionLabel.text = question.question
         if String(question.user_id) == UserDataService.instance.userID {
             // show answer button if it is user's own question, not otherwise
-            cell.answerButton.isHidden = false
-            cell.userNameLbl.isHidden = true
+            cell.userNameLbl.text = "\(String(describing: question.user_name))"
+            cell.background.backgroundColor = GALVANIZE_ORANGE
         } else {
-            cell.answerButton.isHidden = true
             cell.userNameLbl.text = question.user_name ?? ""
+            cell.background.backgroundColor = UIColor.white
         }
         return cell
         
@@ -134,8 +134,8 @@ class QueueVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIT
     
     // Swipe to edit
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteAction = self.contextualMarkAnsweredAction(forRowAtIndexPath: indexPath)
-        let swipeConfig = UISwipeActionsConfiguration(actions: [deleteAction])
+        let markAnsweredAction = self.contextualMarkAnsweredAction(forRowAtIndexPath: indexPath)
+        let swipeConfig = UISwipeActionsConfiguration(actions: [markAnsweredAction])
         return swipeConfig
     }
     
